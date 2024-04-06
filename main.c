@@ -1,5 +1,7 @@
 #include <stdio.h>
+#include <stdbool.h>
 #include "mastermind.h"
+#include "color.h"
 
 int main() {
     enum Color secretCode[CODE_LENGTH];
@@ -15,9 +17,13 @@ int main() {
         printf("Enter your guess (e.g., RYGB): ");
 
         // Input guess from user
-        // You'll need to implement this part
-        // For simplicity, assume the input format is RYGB for Red Yellow Green Blue
+        char input[CODE_LENGTH + 1]; // +1 for null terminator
+        scanf("%s", input);
+
         // Convert user input to enum Color guess[]
+        for (int i = 0; i < CODE_LENGTH; i++) {
+            guess[i] = charToColor(input[i]);
+        }
 
         // Check if guess is valid
         if (!validateGuess(guess)) {
