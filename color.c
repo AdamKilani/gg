@@ -47,12 +47,3 @@ void printColor(enum Color color) {
             break;
     }
 }
-// Fonction pour afficher une chaîne de valeurs Color en couleur
-void printColorString(const enum Color *colors, size_t length) {
-    for (size_t i = 0; i < length; i++) {
-        printColor(colors[i]);
-        if (i < length - 1) {
-            printf(" ");
-        }
-    }
-}
