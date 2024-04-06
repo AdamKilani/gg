@@ -1,18 +1,23 @@
-CC = gcc
-CFLAGS = -Wall -Wextra -std=c99
-LDFLAGS =
+CC=gcc
+CFLAGS=-Wall -Wextra -std=c99
+LDFLAGS=
 
-SRC = main.c mastermind.c color.c
-OBJ = $(SRC:.c=.o)
-EXECUTABLE = mastermind
+# List of source files
+SOURCES=main.c mastermind.c color.c
+
+# List of object files
+OBJECTS=$(SOURCES:.c=.o)
+
+# Executable name
+EXECUTABLE=mastermind
 
 all: $(EXECUTABLE)
 
-$(EXECUTABLE): $(OBJ)
-	$(CC) $(LDFLAGS) $(OBJ) -o $@
+$(EXECUTABLE): $(OBJECTS)
+	$(CC) $(CFLAGS) $(OBJECTS) -o $(EXECUTABLE) $(LDFLAGS)
 
 %.o: %.c
 	$(CC) $(CFLAGS) -c $< -o $@
 
 clean:
-	rm -f $(OBJ) $(EXECUTABLE)
+	rm -f $(OBJECTS) $(EXECUTABLE)
