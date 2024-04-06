@@ -43,15 +43,10 @@ int main() {
         printf("\n");
 
         // Check for win condition
-if (blackPins == CODE_LENGTH) {
-    printf("Congratulations! You've guessed the code.\n");
-    break;
-}
-
-// Print the secret code for debugging purposes
-printf("Secret code: ");
-printColorString(secretCode, CODE_LENGTH);
-printf("\n");
+        if (blackPins == CODE_LENGTH) {
+            printf("Congratulations! You've guessed the code.\n");
+            break;
+        }
 
         attempts++;
     }
