@@ -4,14 +4,14 @@
 #include <stdbool.h>
 #include "color.h"
 
-// Constants
-#define COLORS 6
+// Déclaration des constantes
 #define CODE_LENGTH 4
 #define MAX_GUESSES 10
+#define NUM_COLORS 6
 
-// Function prototypes
+// Déclaration des fonctions propres au jeu Mastermind
 void generateSecretCode(enum Color secretCode[]);
 bool validateGuess(const enum Color guess[]);
-void checkGuess(const enum Color secretCode[], const enum Color guess[], int* blackPins, int* whitePins);
+void checkGuess(const enum Color secretCode[], const enum Color guess[], int *blackPins, int *whitePins);
 
-#endif /* MASTERMIND_H */
+#endif
