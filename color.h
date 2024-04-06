@@ -17,7 +17,7 @@ enum Color charToColor(char c);
 
 // Déclarer la fonction printColor
 void printColor(enum Color color);
-// Déclarer la fonction printColorString
-void printColorString(const enum Color *colors, size_t length);
+
+
 
 #endif
