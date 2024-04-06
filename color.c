@@ -1,10 +1,49 @@
 #include "color.h"
 #include <stdio.h>
 
-// Function to print color representation
+// Fonction pour convertir un caractère en une valeur Color
+enum Color charToColor(char c) {
+    switch (c) {
+        case 'R':
+            return RED;
+        case 'C':
+            return CYAN;
+        case 'Y':
+            return YELLOW;
+        case 'G':
+            return GREEN;
+        case 'B':
+            return BLUE;
+        case 'P':
+            return PURPLE;
+        default:
+            return UNKNOWN;
+    }
+}
+
+// Fonction pour afficher une valeur Color en couleur
 void printColor(enum Color color) {
-    const char* colorCodes[] = {"\x1b[31m", "\x1b[36m", "\x1b[33m", "\x1b[32m", "\x1b[34m", "\x1b[35m"};
-    const char* resetCode = "\x1b[0m";
-    const char* colorNames[] = {"Red", "Cyan", "Yellow", "Green", "Blue", "Purple"};
-    printf("%s%s%s ", colorCodes[color], colorNames[color], resetCode);
+    switch (color) {
+        case RED:
+            printf("\033[1;31mR\033[0m");
+            break;
+        case CYAN:
+            printf("\033[1;36mC\033[0m");
+            break;
+        case YELLOW:
+            printf("\033[1;33mY\033[0m");
+            break;
+        case GREEN:
+            printf("\033[1;32mG\033[0m");
+            break;
+        case BLUE:
+            printf("\033[1;34mB\033[0m");
+            break;
+        case PURPLE:
+            printf("\033[1;35mP\033[0m");
+            break;
+        default:
+            printf("?");
+            break;
+    }
 }
